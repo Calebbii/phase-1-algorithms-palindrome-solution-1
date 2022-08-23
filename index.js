@@ -1,5 +1,23 @@
+function reverseString(word) {
+  // create an array from the input string
+  const wordArray = word.split("");
+  // reverse the array
+  const reversedWordArray = wordArray.reverse();
+  // create a string from the reversed array
+  const reversedWord = reversedWordArray.join("");
+  // return the reversed string
+  return reversedWord;
+}
+
 function isPalindrome(word) {
   // Write your algorithm here
+  const reversedWord = reverseString(word);
+  // if the reversed string is the same as the input
+  if (word === reversedWord) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* 
@@ -21,5 +39,6 @@ if (require.main === module) {
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
 }
+
 
 module.exports = isPalindrome;
